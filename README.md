@@ -4,6 +4,7 @@ Resources on the Nintendo GameCube's Hardware
 ### Links:
  - https://www.gc-forever.com/yagcd/index.html
  - https://wiki.wiidatabase.de/wiki/Hauptseite
+ - https://wiibrew.org/wiki/Libogc (homebrew)
 
 ### Base info:
 CPU:
