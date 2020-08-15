@@ -2,7 +2,7 @@
 Resources on the Nintendo GameCube's Hardware
 
 ### Links:
- - https://www.gc-forever.com/yagcd/index.html#idx4.1
+ - https://www.gc-forever.com/yagcd/index.html
  - https://wiki.wiidatabase.de/wiki/Hauptseite
 
 ### Base info:
