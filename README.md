@@ -1,6 +1,10 @@
 # GameCubeResources
 Resources on the Nintendo GameCube's Hardware
 
+### Links:
+ - https://www.gc-forever.com/yagcd/index.html#idx4.1
+ - https://wiki.wiidatabase.de/wiki/Hauptseite
+
 ### Base info:
 CPU:
   - Customized PowerPC 750CXe core
