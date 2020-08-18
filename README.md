@@ -2,9 +2,10 @@
 Resources on the Nintendo GameCube's Hardware
 
 ### Links:
- - https://www.gc-forever.com/yagcd/index.html
- - https://wiki.wiidatabase.de/wiki/Hauptseite
- - https://wiibrew.org/wiki/Libogc (homebrew)
+ - Most extensive resource I have found so far: https://www.gc-forever.com/yagcd/index.html
+ - Some German wiki that seems to have a bit of info: https://wiki.wiidatabase.de/wiki/Hauptseite
+ - Homebrew: https://wiibrew.org/wiki/Libogc
+ - IPL decryption algorithm: https://github.com/FIX94/Nintendont/blob/master/loader/source/ipl.c (based on http://msierks.github.io/rustcube/src/rustcube/gamecube.rs.html)
 
 ### Base info:
 CPU:
