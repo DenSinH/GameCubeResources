@@ -6,6 +6,7 @@ Resources on the Nintendo GameCube's Hardware
  - Some German wiki that seems to have a bit of info: https://wiki.wiidatabase.de/wiki/Hauptseite
  - Homebrew: https://wiibrew.org/wiki/Libogc
  - IPL decryption algorithm: https://github.com/FIX94/Nintendont/blob/master/loader/source/ipl.c (based on http://msierks.github.io/rustcube/src/rustcube/gamecube.rs.html)
+ - GHidra Gekko language package: https://github.com/aldelaro5/ghidra-gekko-broadway-lang
 
 ### Base info:
 CPU:
