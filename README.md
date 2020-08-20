@@ -2,6 +2,7 @@
 Resources on the Nintendo GameCube's Hardware
 
 ### Links:
+ - Journal by a Dolphin contributor: https://www.alchemistowl.org/pocorgtfo/pocorgtfo06.pdf
  - Most extensive resource I have found so far: https://www.gc-forever.com/yagcd/index.html
  - Some German wiki that seems to have a bit of info: https://wiki.wiidatabase.de/wiki/Hauptseite
  - Homebrew: https://wiibrew.org/wiki/Libogc
