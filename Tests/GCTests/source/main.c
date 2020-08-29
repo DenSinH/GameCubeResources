@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
     register u32 u = 0;
 
     while(1) {
-        output("%d\n", i);
+        output("%d %08x\n", i, getCR());
         i++;
         u--;
     }
