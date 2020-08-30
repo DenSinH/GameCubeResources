@@ -14,13 +14,13 @@ typedef = \
 f"""
 #define NUMBER_OF_TESTS {number_of_tests}
 
-typedef struct s_operation {{
+typedef struct s_operation_int {{
     u8 opcode;
     u32 op1;
     u32 op2;
     bool sign;
     u32 result;
-}} s_operation;
+}} s_operation_int;
 """
 
 tests = []
@@ -36,7 +36,7 @@ for i in range(number_of_tests):
 
 array = \
 """
-static const s_operation tests[NUMBER_OF_TESTS] = {{
+static const s_operation_int int_tests[NUMBER_OF_TESTS] = {{
     {0}
 }};
 """.format(",\n    ".join(tests))

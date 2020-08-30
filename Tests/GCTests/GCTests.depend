@@ -7,12 +7,12 @@
 	<stdio.h>
 	"default.h"
 
-1598712616 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\default.h
+1598777049 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\default.h
 	<stdint.h>
 
-1598775306 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\main.c
+1598776870 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\main.c
 	"default.h"
-	"int_fuzzer/int_fuzzer.h"
+	"single_fuzzer/single_fuzzer.h"
 
 1598726195 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\data.h
 	"default.h"
@@ -20,14 +20,28 @@
 
 1598775227 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\int_fuzzer.h
 
-1598775319 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\int_fuzzer.c
+1598777309 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\int_fuzzer.c
 	"int_fuzzer.h"
 	"../default.h"
 	"../output.h"
 	"data.h"
 	<stdbool.h>
 
-1598775492 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\data.h
+1598777197 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\data.h
 	"../default.h"
 	<stdbool.h>
+
+1598777305 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\single_fuzzer\single_fuzzer.c
+	"single_fuzzer.h"
+	"../default.h"
+	"../output.h"
+	"data.h"
+	<stdbool.h>
+
+1598776718 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\single_fuzzer\single_fuzzer.h
+
+1598777180 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\single_fuzzer\data.h
+	"../default.h"
+	<stdbool.h>
+	<math.h>
 

@@ -58,11 +58,17 @@ export DEPSDIR	:=	$(CURDIR)/$(BUILD)
 #---------------------------------------------------------------------------------
 # automatically build a list of object files for our project
 #---------------------------------------------------------------------------------
-CFILES      :=  $(shell find . -name "*.c")
+# CFILES      :=  $(shell find . -name "*.c")
+CFILES  	:=	$(foreach dir,$(SOURCES),$(patsubst source/%, %, $(wildcard $(dir)/*.c) $(wildcard $(dir)/*/*.c)))
 CPPFILES	:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
 sFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.s)))
 SFILES		:=	$(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.S)))
 BINFILES	:=	$(foreach dir,$(DATA),$(notdir $(wildcard $(dir)/*.*)))
+
+$(info ${CFILES})
+# make nested directories from C files
+FOLDERS     := $(foreach cfile,$(CFILES),$(dir $(BUILD)/$(cfile)))
+$(shell mkdir -p $(foreach dir, $(FOLDERS), $(CURDIR)/$(dir)))
 
 #---------------------------------------------------------------------------------
 # use CXX for linking C++ projects, CC for standard C
