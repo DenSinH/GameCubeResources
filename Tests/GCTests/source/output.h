@@ -6,7 +6,7 @@
 #include "default.h"
 
 #define SIIOBUFFER 0xCC006480
-#define OUTPUT_BUFFER_LENGTH 0x100
+#define OUTPUT_BUFFER_LENGTH 0x800
 
 static char output_buffer[OUTPUT_BUFFER_LENGTH];
 

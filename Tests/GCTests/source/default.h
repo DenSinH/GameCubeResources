@@ -3,12 +3,12 @@
 
 #include <stdint.h>
 
-#define u32 uint32_t
-#define u16 uint16_t
-#define u8 uint8_t
+typedef uint32_t u32;
+typedef uint16_t u16;
+typedef uint8_t u8;
 
-#define i32 int32_t
-#define i16 int16_t
-#define i8 int8_t
+typedef int32_t i32;
+typedef int16_t i16;
+typedef int8_t i8;
 
 #endif // DEFAULT_H

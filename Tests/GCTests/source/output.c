@@ -7,5 +7,5 @@ void out_to_SIO(u32 value) {
 }
 
 void init_output() {
-    out_to_SIO((u32)(&output_buffer));
+    out_to_SIO((u32)(&output_buffer) - sizeof(output_buffer));
 }

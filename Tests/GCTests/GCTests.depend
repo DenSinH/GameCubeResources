@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1598726180 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\output.c
+	"output.h"
+	"default.h"
+
+1598714920 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\output.h
+	<stdio.h>
+	"default.h"
+
+1598712616 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\default.h
+	<stdint.h>
+
+1598775306 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\main.c
+	"default.h"
+	"int_fuzzer/int_fuzzer.h"
+
+1598726195 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\data.h
+	"default.h"
+	<stdbool.h>
+
+1598775227 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\int_fuzzer.h
+
+1598775319 source:d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\int_fuzzer.c
+	"int_fuzzer.h"
+	"../default.h"
+	"../output.h"
+	"data.h"
+	<stdbool.h>
+
+1598775492 d:\cprojects\gcresources\gamecuberesources\tests\gctests\source\int_fuzzer\data.h
+	"../default.h"
+	<stdbool.h>
+
