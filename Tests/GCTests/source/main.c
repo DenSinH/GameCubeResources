@@ -1,9 +1,10 @@
 #include "default.h"
 #include "single_fuzzer/single_fuzzer.h"
+#include "double_fuzzer/double_fuzzer.h"
 
 
 int main(int argc, char **argv) {
 
-    single_fuzzer_main();
+   double_fuzzer_main();
 	return 0;
 }

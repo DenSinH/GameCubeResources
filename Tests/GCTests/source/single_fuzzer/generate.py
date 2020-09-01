@@ -35,9 +35,9 @@ tests = []
 for i in range(number_of_tests):
     opcode = random.randint(0, len(operations) - 1)
     f1 = np.float32(np.random.uniform(np.finfo(np.float32).min, np.finfo(np.float32).max))
-    f2 = np.float32(np.random.uniform(np.finfo(np.float32).min, np.finfo(np.float32).max))
+    f2 = 1  # np.float32(np.random.uniform(np.finfo(np.float32).min, np.finfo(np.float32).max))
     f3 = np.float32(np.random.uniform(np.finfo(np.float32).min, np.finfo(np.float32).max))
-    f4 = np.float32(np.random.uniform(np.finfo(np.float32).min, np.finfo(np.float32).max))
+    f4 = 1  # np.float32(np.random.uniform(np.finfo(np.float32).min, np.finfo(np.float32).max))
     op1 = np.float32(f1 / f2)
     op2 = np.float32(f3 / f4)
     op3 = np.float32(f2 / f3)
