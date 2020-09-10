@@ -1,5 +1,5 @@
-triangle.o: \
- D\:/CProjects/GCResources/GameCubeResources/Tests/Triangle/source/triangle.c \
+shapes.o: \
+ D\:/CProjects/GCResources/GameCubeResources/Tests/Shapes/source/shapes.c \
  D\:\devkitpro/libogc/include/gccore.h \
  D\:\devkitpro/libogc/include/ogc/dsp.h \
  D\:\devkitpro/libogc/include/gctypes.h \

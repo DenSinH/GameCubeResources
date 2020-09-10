@@ -9,7 +9,8 @@ static void	*frameBuffer;
 static vu8	readyForCopy;
 #define	FIFO_SIZE (256*1024)
 
-s16	vertices[] ATTRIBUTE_ALIGN(32) = {
+
+float vertices[] ATTRIBUTE_ALIGN(32) = {
 	-30, -15, 0,
 	-15, -15, 0,
 	0,	15, 0,
@@ -22,15 +23,15 @@ s16	vertices[] ATTRIBUTE_ALIGN(32) = {
 };
 
 u8 colors[]	ATTRIBUTE_ALIGN(32)	= {
-	255, 0,	0, 255,
-	0, 255,	0, 255,
-	0, 0, 255, 255,
-	255, 255, 255, 255,
+	255, 0,	0, 0,
+	0, 255,	0, 0,
+	0, 0, 255, 0,
+	255, 255, 255, 0,
 
-	255, 255, 0, 255,
-	255, 0, 255, 255,
-	0, 255, 255, 255,
-	0, 0, 0, 255,
+	255, 255, 0, 0,
+	255, 0, 255, 0,
+	0, 255, 255, 0,
+	0, 0, 0, 0
 };
 
 void update_screen(Mtx viewMatrix);
@@ -90,9 +91,9 @@ int	main(void)
 	GX_ClearVtxDesc();
 	GX_SetVtxDesc(GX_VA_POS, GX_INDEX8);
 	GX_SetVtxDesc(GX_VA_CLR0, GX_INDEX8);
-	GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_POS,	GX_POS_XYZ,	GX_S16,	0);
-	GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_CLR0, GX_CLR_RGBA, GX_RGBA8,	0);
-	GX_SetArray(GX_VA_POS, vertices, 3*sizeof(s16));
+	GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_POS,	GX_POS_XYZ,	GX_F32,	0);
+	GX_SetVtxAttrFmt(GX_VTXFMT0, GX_VA_CLR0, GX_CLR_RGBA, GX_RGBX8,	0);
+	GX_SetArray(GX_VA_POS, vertices, 3*sizeof(float));
 	GX_SetArray(GX_VA_CLR0,	colors,	4*sizeof(u8));
 	GX_SetNumChans(1);
 	GX_SetNumTexGens(0);
@@ -125,8 +126,8 @@ void update_screen(	Mtx	viewMatrix )
 
 	GX_LoadPosMtxImm(modelView,	GX_PNMTX0);
 
-    const int n_vertices = 6;
-	GX_Begin(GX_TRIANGLES, GX_VTXFMT0, n_vertices);
+    const int n_vertices = 8;
+	GX_Begin(GX_QUADS, GX_VTXFMT0, n_vertices);
 
     for (int i = 0; i < n_vertices; i++) {
         GX_Position1x8(i);
