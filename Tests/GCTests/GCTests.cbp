@@ -3,20 +3,37 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="GCTests" />
+		<Option makefile_is_custom="1" />
 		<Option pch_mode="2" />
-		<Option compiler="gcc" />
+		<Option compiler="devkitpro_ppc_compiler" />
+		<MakeCommands>
+			<Build command="$make -f $makefile $file" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile clean" />
+			<SilentBuild command="$make -f $makefile $file &gt; $(CMD_NULL)" />
+		</MakeCommands>
 		<Build>
 			<Target title="Release">
 				<Option output="bin/Release/GCTests" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
-				<Option compiler="gcc" />
+				<Option compiler="devkitpro_ppc_compiler" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $file" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile clean" />
+					<SilentBuild command="$make -f $makefile $file &gt; $(CMD_NULL)" />
+				</MakeCommands>
 			</Target>
 		</Build>
 		<Compiler>
@@ -24,6 +41,11 @@
 		</Compiler>
 		<Unit filename="Makefile" />
 		<Unit filename="source/default.h" />
+		<Unit filename="source/double_fuzzer/data.h" />
+		<Unit filename="source/double_fuzzer/double_fuzzer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="source/double_fuzzer/double_fuzzer.h" />
 		<Unit filename="source/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -31,6 +53,15 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="source/output.h" />
+		<Unit filename="source/single_fuzzer/data.h" />
+		<Unit filename="source/single_fuzzer/single_fuzzer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="source/single_fuzzer/single_fuzzer.h" />
+		<Unit filename="source/triangle/triangle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="source/triangle/triangle.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -5,6 +5,6 @@
 
 int main(int argc, char **argv) {
 
-   double_fuzzer_main();
-	return 0;
+    double_fuzzer_main();
+    return 0;
 }
