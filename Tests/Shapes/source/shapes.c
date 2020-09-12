@@ -14,7 +14,7 @@ float vertices[] ATTRIBUTE_ALIGN(32) = {
 	-30, -15, 0,
 	-15, -15, 0,
 	0,	15, 0,
-	-15,	15, 0,
+	-15, 15, 0,
 
 	0, -15, 0,
 	15, -15, 0,
@@ -42,7 +42,7 @@ int	main(void)
 	Mtx	view;
 	Mtx	projection;
 	PADStatus pads[4];
-	GXColor	backgroundColor	= {0, 0, 0,	255};
+	GXColor	backgroundColor	= {139, 23, 212,	255};
 	void *fifoBuffer = NULL;
 
 	VIDEO_Init();

@@ -3,8 +3,18 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="Shapes" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="D:/CProjects/GCResources/GameCubeResources/Tests/Shapes" />
 		<Option pch_mode="2" />
 		<Option compiler="devkitpro_ppc_compiler" />
+		<MakeCommands>
+			<Build command="$make -f $makefile $file" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile clean" />
+			<SilentBuild command="$make -f $makefile $file &gt; $(CMD_NULL)" />
+		</MakeCommands>
 		<Build>
 			<Target title="Release">
 				<Option output="bin/Release/Shapes" prefix_auto="1" extension_auto="1" />
@@ -17,11 +27,23 @@
 				<Linker>
 					<Add option="-s" />
 				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile $file" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile clean" />
+					<SilentBuild command="$make -f $makefile $file &gt; $(CMD_NULL)" />
+				</MakeCommands>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Makefile" />
+		<Unit filename="../source/shapes.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
