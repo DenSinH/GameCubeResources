@@ -56,6 +56,12 @@ void draw_init();
 void draw_cube(Mtx v);
 static void	copy_buffers(u32 unused);
 
+#define SIIOBUFFER 0xCC006480
+void out_to_SIO(u32 value) {
+    u32* SIO_ptr = SIIOBUFFER;
+    *SIO_ptr = value;
+}
+
 int	main(void)
 {
 	Mtx	view;
@@ -121,16 +127,24 @@ int	main(void)
 
 	while (1)
 	{
+        out_to_SIO(0xc0000000);
 		guLookAt(view, &camera,	&up, &look);
+		out_to_SIO(0xc0000001);
 		GX_SetViewport(0,0,screenMode->fbWidth,screenMode->efbHeight,0,1);
+		out_to_SIO(0xc0000002);
 		GX_InvVtxCache();
+		out_to_SIO(0xc0000003);
 		GX_InvalidateTexAll();
+		out_to_SIO(0xc0000004);
 		draw_cube(view);
+        out_to_SIO(0xc0000005);
 		PAD_Read(pads);
+		out_to_SIO(0xc0000006);
 		if (pads[0].button & PAD_BUTTON_START) {
 			void (*reload)() = (void(*)())0x80001800;
 			reload();
 		}
+        out_to_SIO(0xc0000007);
 	}
 	return 0;
 }
@@ -159,7 +173,7 @@ void draw_cube(Mtx v) {
 	Mtx m; // model matrix.
 	Mtx mv; // modelview matrix.
 	guVector axis = {-1,1,0};
-	static float rotateby = 0;
+	static float rotateby = 60;
 
 	rotateby ++;
 
@@ -186,10 +200,14 @@ void draw_cube(Mtx v) {
 
 	GX_End();
 
+    out_to_SIO(0x68);
 	GX_DrawDone();
 	readyForCopy = GX_TRUE;
 
+    out_to_SIO(0x69);
 	VIDEO_WaitVSync();
+
+    out_to_SIO(0x70);
 }
 
 static void	copy_buffers(u32 count __attribute__ ((unused)))

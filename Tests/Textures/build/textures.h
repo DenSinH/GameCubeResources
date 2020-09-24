@@ -1,0 +1,1 @@
+#define prideyoshi 0
