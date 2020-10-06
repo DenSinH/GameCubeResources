@@ -29,7 +29,7 @@
 #define DEFAULT_FIFO_SIZE	(256*1024)
 
 #define MAX_PARTICLES 1000
- 
+
 static void *frameBuffer[2] = { NULL, NULL};
 GXRModeObj *rmode;
 
@@ -111,7 +111,7 @@ int main( int argc, char **argv ){
 
 	rmode = VIDEO_GetPreferredMode(NULL);
 	PAD_Init();
-	
+
 	// allocate 2 framebuffers for double buffering
 	frameBuffer[0] = MEM_K0_TO_K1(SYS_AllocateFramebuffer(rmode));
 	frameBuffer[1] = MEM_K0_TO_K1(SYS_AllocateFramebuffer(rmode));
@@ -127,12 +127,12 @@ int main( int argc, char **argv ){
 	void *gp_fifo = NULL;
 	gp_fifo = memalign(32,DEFAULT_FIFO_SIZE);
 	memset(gp_fifo,0,DEFAULT_FIFO_SIZE);
- 
+
 	GX_Init(gp_fifo,DEFAULT_FIFO_SIZE);
- 
+
 	// clears the bg to color and clears the z buffer
 	GX_SetCopyClear(background, 0x00ffffff);
- 
+
 	// other gx setup
 	GX_SetViewport(0,0,rmode->fbWidth,rmode->efbHeight,0,1);
 	yscale = GX_GetYScaleFactor(rmode->efbHeight,rmode->xfbHeight);
@@ -142,7 +142,7 @@ int main( int argc, char **argv ){
 	GX_SetDispCopyDst(rmode->fbWidth,xfbHeight);
 	GX_SetCopyFilter(rmode->aa,rmode->sample_pattern,GX_TRUE,rmode->vfilter);
 	GX_SetFieldMode(rmode->field_rendering,((rmode->viHeight==2*rmode->xfbHeight)?GX_ENABLE:GX_DISABLE));
- 
+
 	GX_SetCullMode(GX_CULL_NONE);
 	GX_CopyDisp(frameBuffer[fb],GX_TRUE);
 	GX_SetDispCopyGamma(GX_GM_1_0);
@@ -175,17 +175,17 @@ int main( int argc, char **argv ){
 	GX_SetTevOrder(GX_TEVSTAGE0, GX_TEXCOORD0, GX_TEXMAP0, GX_COLOR0A0);
 
 	GX_InvalidateTexAll();
- 
+
 	TPL_OpenTPLFromMemory(&ParticleTPL, (void *)Particle_tpl,Particle_tpl_size);
 	TPL_GetTexture(&ParticleTPL,particle,&texture);
- 
+
 	// setup our camera at the origin
 	// looking down the -z axis with y up
 	guVector cam = {0.0F, 0.0F, 0.0F},
 			up = {0.0F, 1.0F, 0.0F},
 		  look = {0.0F, 0.0F, -1.0F};
 	guLookAt(view, &cam, &up, &look);
- 
+
 
 	// setup our projection matrix
 	// this creates a perspective matrix with a view angle of 90,
@@ -213,7 +213,7 @@ int main( int argc, char **argv ){
 		particle_array[i].yg = -0.8f;
 		particle_array[i].zg = 0.0f;
 	}
- 
+
 	while(1) {
 
 		PAD_ScanPads();
@@ -320,20 +320,20 @@ int main( int argc, char **argv ){
 
 		// do this stuff after drawing
 		GX_DrawDone();
-		
+
 		fb ^= 1;		// flip framebuffer
 		GX_SetZMode(GX_TRUE, GX_LEQUAL, GX_TRUE);
 		GX_SetColorUpdate(GX_TRUE);
 		GX_CopyDisp(frameBuffer[fb],GX_TRUE);
 
 		VIDEO_SetNextFramebuffer(frameBuffer[fb]);
- 
+
 		VIDEO_Flush();
- 
+
 		VIDEO_WaitVSync();
 
 
 	}
 	return 0;
 }
- 
+
